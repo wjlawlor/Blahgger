@@ -5,3 +5,10 @@
 <h1>Home</h1>
 
 <p>Welcome @ViewBag.CurrentUserEmail!</p>
+
+<div>
+    @using (Html.BeginForm("Logout", "Account"))
+    {
+        <button type="submit" class="btn btn-warning btn-lg">Log Out</button>
+    }
+</div>
