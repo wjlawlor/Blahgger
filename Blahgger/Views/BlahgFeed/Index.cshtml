@@ -1,0 +1,25 @@
+﻿@model IList<Blahgger.Models.BlahgPost>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ViewBag.Title</h2>
+
+<p>There are @Model.Count posts to read.</p>
+
+<div>
+    @foreach (var blahgPost in Model)
+    {
+        <div>
+            @blahgPost.Name
+            @blahgPost.Text
+            @blahgPost.CreatedOn.ToString("f")
+            @using (Html.BeginForm("Delete", "Twit", new { Id = twit.Id }, FormMethod.Post))
+            {
+                <button type="submit">Delete</button>
+            }
+            <p>&nbsp;</p>
+        </div>
+    }
+</div>
