@@ -7,8 +7,13 @@
 <p>Welcome @ViewBag.CurrentUserEmail!</p>
 
 <div>
+    @Html.ActionLink("My Feed", "Index", "BlahgFeed", null, new { @class = "btn btn-primary" })
+</div>
+
+<div>
     @using (Html.BeginForm("Logout", "Account"))
     {
         <button type="submit" class="btn btn-warning btn-lg">Log Out</button>
     }
 </div>
+
